@@ -1,0 +1,433 @@
+body { background: #fdf6f7; color: #5c4d51; font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
+.container { background: white; padding: 40px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); max-width: 600px; text-align: center; }
+h1, h2 { color: #ff4d6d; }
+.btn { display: inline-block; margin-top: 20px; padding: 12px 30px; background: #ff4d6d; color: white; text-decoration: none; border-radius: 25px; transition: 0.3s; }
+.btn:hover { transform: scale(1.05); background: #ff758c; }
+#heart-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+.nav-bar { margin-bottom: 30px; }
+.nav-bar a { margin: 0 10px; color: #ff4d6d; text-decoration: none; font-weight: bold; }
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Outfit:wght@300;400&display=swap');
+
+body {
+    background: #fdf6f7;
+    color: #5c4d51;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(255, 77, 109, 0.1);
+    max-width: 600px;
+    text-align: center;
+    width: 90%; /* Mobile friendly */
+}
+
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #ff4d6d;
+}
+
+p { font-weight: 300; }
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #ff4d6d;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.btn:hover { transform: scale(1.05); background: #ff758c; }
+
+
+
+/* 1. Global Reset & Soft Animations */
+* { box-sizing: border-box; }
+body {
+    background-color: #fdf6f7;
+    color: #5c4d51;
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: pulseBg 10s infinite alternate;
+}
+
+@keyframes pulseBg {
+    0% { background-color: #fdf6f7; }
+    50% { background-color: #fff0f3; }
+    100% { background-color: #fdf6f7; }
+}
+
+/* 2. Unified Container */
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(255, 77, 109, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+/* 3. Text Styling */
+h1, h2, h3 { font-family: 'Dancing Script', cursive; color: #ff4d6d; }
+p { font-weight: 300; line-height: 1.6; }
+
+/* 4. Unified Button Styles (Works for <button> and class="btn") */
+.btn, button {
+    display: inline-block;
+    padding: 15px 35px;
+    background: #ff4d6d;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+    margin: 10px;
+}
+
+.btn:hover, button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 77, 109, 0.4);
+    background: #ff758c;
+}
+
+/* 5. Footer & Navigation */
+footer { margin-top: 50px; font-size: 0.8rem; color: #aaa; }
+.nav-bar { margin-bottom: 30px; }
+.nav-bar a { margin: 0 10px; color: #ff4d6d; text-decoration: none; font-weight: bold; }
+
+/* 6. Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body { background: #121212; color: #ffffff; }
+    .container { background: #1e1e1e; }
+}
+
+
+
+
+
+/* Global Reset & Base Style */
+* { box-sizing: border-box; transition: background-color 0.5s ease; }
+
+body {
+    background-color: #fdf6f7;
+    color: #5c4d51;
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 35px;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(255, 77, 109, 0.15);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 { font-family: 'Dancing Script', cursive; color: #ff4d6d; font-size: 2.5rem; margin-bottom: 10px; }
+
+.feature-box {
+    margin: 20px 0;
+    padding: 15px;
+    background: #fffafb;
+    border-radius: 20px;
+}
+
+/* Unified Button Style */
+.btn, button {
+    padding: 12px 25px;
+    background: #ff4d6d;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(255, 77, 109, 0.2);
+}
+
+.btn:hover, button:hover {
+    transform: scale(1.05);
+    background: #ff758c;
+}
+
+hr { border: none; border-top: 1px solid #eee; margin: 25px 0; }
+
+.nav-links { display: flex; flex-direction: column; gap: 10px; }
+
+
+/* Envelope Container */
+.envelopes-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.envelope-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.letter-check {
+    display: none; /* Hide the actual checkbox */
+}
+
+.envelope {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    background: #ffccd5; /* Bottom fold color */
+}
+
+/* The Paper inside */
+.letter {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 130px;
+    height: 80px;
+    background: white;
+    padding: 10px;
+    font-size: 10px;
+    transition: 0.5s;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.letter p { font-size: 0.6rem; color: #ff4d6d; line-height: 1.2; }
+
+/* The Flap (Top) */
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-top: 60px solid #ff4d6d; /* Flap color */
+    transform-origin: top;
+    transition: 0.4s;
+    z-index: 4;
+}
+
+/* The Front sides of envelope */
+.front {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 75px solid #ffccd5;
+    border-right: 75px solid #ffccd5;
+    border-bottom: 50px solid #ffb3c1;
+    z-index: 3;
+}
+
+/* THE ACTION: When checkbox is checked */
+.letter-check:checked + .envelope .top {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.letter-check:checked + .envelope .letter {
+    transform: translateY(-50px);
+    height: 120px;
+    z-index: 2;
+}
+
+.label-text {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #ff4d6d;
+}   
+
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    max-width: 400px;
+    margin: 40px auto;
+    padding-left: 30px;
+    text-align: left;
+    border-left: 2px dashed #ffb3c1;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -37px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: #ff4d6d;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: #ff4d6d;
+    font-size: 0.9rem;
+}
+
+.timeline-content {
+    background: #fffafb;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.05);
+}
+
+.timeline-content h4 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Future Pulsing Effect */
+.pulsing {
+    animation: heartbeat 1.5s infinite;
+    background: #ff4d6d;
+    box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.7);
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.7); }
+    70% { transform: scale(1.2); box-shadow: 0 0 0 10px rgba(255, 77, 109, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 77, 109, 0); }
+}
+
+.highlight .timeline-content {
+    border: 1px solid #ff4d6d;
+    background: #fff0f3;
+}
+.scratch-container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 20px auto;
+    user-select: none; /* Prevents text highlighting while scratching */
+}
+
+.secret-para {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff0f3;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: 2px dashed #ff4d6d;
+}
+
+.secret-para p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #5c4d51;
+    margin: 0;
+}
+
+#scratch-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: crosshair;
+    border-radius: 15px;
+    touch-action: none; /* Crucial for mobile scratching */
+}
+
+.secret-para p {
+    font-family: 'Dancing Script', cursive; /* Makes it look like a handwritten note */
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #ff4d6d;
+    text-align: center;
+    padding: 10px;
+}
+
+#fog-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    cursor: crosshair;
+}
+
+#hidden-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('your-happy-photo.jpg'); /* REPLACE WITH YOUR PHOTO NAME */
+    background-size: cover;
+    background-position: center;
+}
+
+#fog-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    touch-action: none; /* Prevents scrolling while wiping on mobile */
+}
+
+.time-capsule {
+    background: #fff0f3;
+    padding: 20px;
+    border-radius: 20px;
+    border-left: 5px solid #ff4d6d;
+    margin: 20px 0;
+    font-style: italic;
+}
