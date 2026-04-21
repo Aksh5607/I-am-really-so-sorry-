@@ -94,3 +94,130 @@ setInterval(() => {
     }
     heartToggle = !heartToggle;
 }, 2000);
+
+
+
+const audio = document.querySelector('audio');
+const lyricsDisplay = document.getElementById('lyrics-display');
+
+// REPLACE these with the actual lyrics and timestamps of your song
+const songLyrics = [
+    { time: 0, text: "🎶 (Intro playing...)" },
+    { time: 5, text: "The first line of our favorite song..." },
+    { time: 10, text: "I remember when we used to sing along..." },
+    { time: 15, text: "2023 felt like it would never end..." },
+    { time: 20, text: "And I'm still here, my love, my friend." }
+];
+
+if (audio && lyricsDisplay) {
+    audio.ontimeupdate = () => {
+        const currentTime = audio.currentTime;
+        const currentLyric = songLyrics.findLast(l => currentTime >= l.time);
+        
+        if (currentLyric && lyricsDisplay.innerHTML !== currentLyric.text) {
+            lyricsDisplay.style.opacity = 0; // Fade out
+            setTimeout(() => {
+                lyricsDisplay.innerHTML = currentLyric.text;
+                lyricsDisplay.style.opacity = 1; // Fade in
+            }, 500);
+        }
+    };
+}
+
+
+
+// This triggers the song the moment she clicks anywhere on the site
+document.addEventListener('click', playFromPart, { once: true });
+
+function revealMessage(element, title, text) {
+    const overlay = document.getElementById('message-overlay');
+    const msgTitle = document.getElementById('msg-title');
+    const msgContent = document.getElementById('msg-content');
+
+    // Set the content
+    msgTitle.innerText = title;
+    msgContent.innerText = text;
+
+    // Show the overlay
+    overlay.classList.remove('hidden');
+
+    // Optional: Add a "Sparkle" effect on click
+    createBurst(element);
+}
+
+function closeMessage() {
+    document.getElementById('message-overlay').classList.add('hidden');
+}
+
+// Simple Particle Burst Effect
+function createBurst(el) {
+    for (let i = 0; i < 10; i++) {
+        const petal = document.createElement('div');
+        petal.innerHTML = '🌸';
+        petal.style.position = 'absolute';
+        petal.style.left = '50%';
+        petal.style.top = '50%';
+        petal.style.transition = 'all 1s ease-out';
+        el.appendChild(petal);
+
+        setTimeout(() => {
+            petal.style.transform = `translate(${(Math.random()-0.5)*200}px, ${(Math.random()-0.5)*200}px) rotate(360deg)`;
+            petal.style.opacity = '0';
+        }, 50);
+        
+        setTimeout(() => petal.remove(), 1000);
+    }
+}
+
+
+const extraReasons = [
+    "The way you handle my moods is magic.",
+    "Your voice is my favorite notification.",
+    "You are the best decision I ever made in 2023.",
+    "I'm still obsessed with the way you say my name."
+];
+
+function getRandomReason() {
+    const reason = extraReasons[Math.floor(Math.random() * extraReasons.length)];
+    alert(reason); // Or show it in a beautiful pop-up!
+}
+
+function revealMessage(title, text) {
+    const overlay = document.getElementById('message-overlay');
+    const msgTitle = document.getElementById('msg-title');
+    const msgContent = document.getElementById('msg-content');
+
+    msgTitle.innerText = title;
+    msgContent.innerText = text;
+
+    overlay.style.display = 'flex'; // This "unhides" it
+}
+
+function closeMessage() {
+    const overlay = document.getElementById('message-overlay');
+    overlay.style.display = 'none'; // This "hides" it again
+}
+
+let pulseTimer;
+
+function startHeartbeat() {
+    const heart = document.querySelector('.inner-heart');
+    const message = document.getElementById('heart-message');
+    
+    heart.classList.add('beating-fast');
+    
+    // After 2 seconds of holding, reveal the hidden message
+    pulseTimer = setTimeout(() => {
+        message.classList.add('show-message');
+    }, 1500);
+}
+
+function stopHeartbeat() {
+    const heart = document.querySelector('.inner-heart');
+    const message = document.getElementById('heart-message');
+    
+    heart.classList.remove('beating-fast');
+    message.classList.remove('show-message');
+    
+    clearTimeout(pulseTimer);
+}
