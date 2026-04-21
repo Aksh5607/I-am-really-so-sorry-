@@ -73,8 +73,8 @@ setInterval(createFloatingHeart, 300);</script>
  <div class="nav-bar">
     <a href="index.html">Home</a> | 
     <a href="apology.html">Sorry</a> | 
-    <a href="memories.html">Memories</a> | 
-    <a href="future.html">if yes!</a>
+    <a href="memories.html">Memories</a>
+    
 </div>
     <div id="progress"><div id="progress-bar"></div></div>
 
@@ -84,12 +84,10 @@ setInterval(createFloatingHeart, 300);</script>
         
         <div class="vision-board">
             <div class="vision-item"><strong> Listening First:</strong> I will listen to hear you, not to respond.</div>
-            <div class="vision-item"><strong> Respecting Boundaries:</strong> I will prioritize your comfort every day.</div>
-            <div class="vision-item"><strong> Making You Laugh:</strong> My biggest goal is to see your smile again.</div>
-            <div class="vision-item"><strong> Consistency:</strong> I want to show up for you, in the small ways.</div>
+            <div class="vision-item"><strong> I'll try for it:</strong> I will try my best to make you feel the same as before.</div>
         </div>
         
-        <p>I have mapped out exactly how I want to be better for you. It’s not just words; it’s a plan. Are you ready to see my biggest vision for us?</p>
+        <p>Pujaaa the thing is ki mene bohot sochaa but jb meh tujhse dur ho gya tb mujheee realise huaa ki meh jin cheezo ko choti smjh rhaa tha wo bohot badi thi aur meh kuch smjh nhi paa rha uss time apne ego me aake, so mene tere liyeee yeh web banaya taaki tujheee sb btaa saku ki meh abb kya soch rhaa hu.</p>
         
         <button id="unlock-btn" onclick="revealSecret()">Reveal my biggest dream</button>
         
@@ -106,12 +104,12 @@ setInterval(createFloatingHeart, 300);</script>
     </div>
     <div id="game-zone" style="text-align: center; margin: 40px 0;">
     <h3>One last favor...</h3>
-    <p>I know I've been crying over my mistakes. Could you help me find my smile again?</p>
+    <p>I know you've been crying over my mistakes. Could you help yourself find my smile again?</p>
     
     <div id="face-box" style="font-size: 80px; cursor: pointer; transition: 0.3s; padding: 20px;">
         <span id="face-emoji">🥺</span>
     </div>
-    <p id="instruction">Rub/Click to help me smile.</p>
+    <p id="instruction">Rub/Click to help yourself smile.</p>
 </div>
 
 <div id="secret-message" style="display:none; background: #fffafb; padding: 30px; border-radius: 20px; border: 1px dashed #ff4d6d;">
@@ -145,15 +143,90 @@ setInterval(createFloatingHeart, 300);</script>
     </div>
 </div>
 <div class="container">
-    <h3>Date Ideas for When You're Ready:</h3>
-    <ul style="text-align: left;">
-        <li>✨ A sunset walk where we started.</li>
-        <li>✨ Cooking that meal you always wanted to try.</li>
-        <li>✨ A quiet night in, just talking like we used to.</li>
-    </ul>
-    <p>Which one would you choose?</p>
-    <button onclick="alert('I will start preparing for this today.')">Pick one</button>
+    <h2 class="section-title">Our Growth & Vows 💍</h2>
+    <div class="vow-list">
+        <div class="vow-item unlocked">
+            <div class="vow-status">✓</div>
+            <div class="vow-text">
+                <strong>The Foundation</strong>
+                <p>Everything we built from 2023. The laughs, and the bond that started it all.</p>
+            </div>
+        </div>
+
+        <div class="vow-item unlocked">
+            <div class="vow-status">✓</div>
+            <div class="vow-text">
+                <strong>The Healing</strong>
+                <p>Learning from the mistakes of the past and choosing to be better for each other today.</p>
+            </div>
+        </div>
+
+        <div class="vow-item locked">
+            <div class="vow-status">🔒</div>
+            <div class="vow-text">
+                <strong>The Forever</strong>
+                <p>Building a future where we never have to say goodbye again. This part is still being written...</p>
+            </div>
+        </div>
+    </div>
+    <script>document.querySelector('.vow-item.locked').addEventListener('click', function() {
+    alert("This part of our story is currently under construction. I need you to help me finish it. ❤️");
+});</script>
+    <div class="container">
+    <h2 class="section-title">A Bouquet for You 💐</h2>
+    <p style="font-size: 0.8rem; opacity: 0.7;">Click a flower to keep it...</p>
+    
+    <div class="flower-shop">
+        <div class="flower-item" onclick="pickFlower(this, '🌸')">🌸</div>
+        <div class="flower-item" onclick="pickFlower(this, '🌷')">🌷</div>
+        <div class="flower-item" onclick="pickFlower(this, '🌹')">🌹</div>
+        <div class="flower-item" onclick="pickFlower(this, '🌻')">🌻</div>
+        <div class="flower-item" onclick="pickFlower(this, '🌺')">🌺</div>
+    </div>
+
+    <div id="your-bouquet"></div>
 </div>
+</div>
+<script>function pickFlower(el, emoji) {
+    const bouquet = document.getElementById('your-bouquet');
+    
+    // Create the new flower for the bouquet
+    const newFlower = document.createElement('span');
+    newFlower.innerHTML = emoji;
+    newFlower.className = 'flower-falling';
+    newFlower.style.fontSize = '1.8rem';
+    
+    // Add it to the bouquet
+    bouquet.appendChild(newFlower);
+
+    // Add a little bounce to the shop item
+    el.style.transform = 'scale(0.8)';
+    setTimeout(() => {
+        el.style.transform = 'scale(1)';
+    }, 100);
+
+    // If she picks 5 flowers, show a hidden message!
+    if (bouquet.children.length === 5) {
+        const secretMsg = document.createElement('p');
+        secretMsg.innerHTML = "A full bouquet for the girl who deserves the world. ❤️";
+        secretMsg.style.color = "#ff4d6d";
+        secretMsg.style.fontSize = "0.9rem";
+        secretMsg.style.marginTop = "10px";
+        secretMsg.style.width = "100%";
+        bouquet.appendChild(secretMsg);
+    }
+}</script>
+</div>
+<script>
+document.querySelectorAll('.date-card').forEach(card => {
+    card.addEventListener('click', () => {
+        card.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            card.style.transform = 'translateX(10px)';
+            // You could even trigger a small heart explosion here!
+        }, 100);
+    });
+});</script>
 <div class="container">
     <h3>Our Story Progress</h3>
     <hr>
@@ -191,7 +264,7 @@ setInterval(createFloatingHeart, 300);</script>
         if (clicks >= 5) {
             face.innerHTML = '😊'; // HE SMILES!
             box.style.cursor = 'default';
-            instr.innerHTML = "You made me smile again. Thank you.";
+            instr.innerHTML = "You made yourself smile again. Thank you.";
             
             // Reveal the request
             secret.style.display = 'block';
