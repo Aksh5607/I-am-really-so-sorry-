@@ -36,13 +36,13 @@ setInterval(createFloatingHeart, 300);</script>
      <div class="nav-bar">
     <a href="index.html">Home</a> | 
     <a href="apology.html">Sorry</a> | 
-    <a href="memories.html">Memories</a> | 
-    <a href="future.html">if yes!</a>
+    <a href="memories.html">Memories</a>
+   
     
 </div>
     <div class="container">
     <h3>Our Timeline</h3>
-    <p>The journey started on: <strong>[Insert Date]</strong></p>
+    <p>The journey started on: <strong>April 26, 2023</strong></p>
     <div style="height: 10px; width: 100%; background: #eee; border-radius: 5px;">
         <div style="height: 100%; width: 75%; background: #ff4d6d; border-radius: 5px;"></div>
     </div>
@@ -54,7 +54,7 @@ setInterval(createFloatingHeart, 300);</script>
             <div class="timeline-dot"></div>
             <div class="timeline-date">2023</div>
             <div class="timeline-content">
-                <h4>The Spark 🌟</h4>
+                <h4>The begining 🌟</h4>
                 <p>Where it all started. I didn't know then that meeting you would become the best part of my life.</p>
             </div>
         </div>
@@ -63,8 +63,8 @@ setInterval(createFloatingHeart, 300);</script>
             <div class="timeline-dot"></div>
             <div class="timeline-date">2024</div>
             <div class="timeline-content">
-                <h4>Building Our World 🌎</h4>
-                <p>A year of inside jokes, late-night talks, and realizing you're my person.</p>
+                <h4>We were busy in our lifes 🌎</h4>
+                <p>After 10th we both were friends and we were good buddies too.</p>
             </div>
         </div>
 
@@ -72,8 +72,8 @@ setInterval(createFloatingHeart, 300);</script>
             <div class="timeline-dot"></div>
             <div class="timeline-date">2025</div>
             <div class="timeline-content">
-                <h4>Unbreakable Bonds 🔗</h4>
-                <p>Through the highs and the lows, we stood by each other. This is the year I realized I never want to let go.</p>
+                <h4>begining of the bond 🔗</h4>
+                <p>Through the highs and the lows, you stood by me. This is the year I realized I never want to let go.</p>
             </div>
         </div>
 
@@ -90,30 +90,32 @@ setInterval(createFloatingHeart, 300);</script>
             <div class="timeline-dot pulsing"></div>
             <div class="timeline-date">Beyond</div>
             <div class="timeline-content">
-                <h4>To Infinity & Beyond ♾️</h4>
-                <p>Our story doesn't have an end date. I'm choosing you for 2027, 2028, and every year after.</p>
+                <h4>Till the end ♾️</h4>
+                <p>Our story can never end. I'm choosing you for 2027, 2028, and every year after.</p>
             </div>
         </div>
     </div>
 </div>
     <div class="container">
         <h1>Our Moments</h1>
-        <p>These aren't just photos. They are the reasons I know we can be better.</p>
+        <p>These aren't just photos. They are the reasons we got so close to each other.</p>
         
         <div class="gallery">
             <div class="memory-card">
                 <img src="WhatsApp Image 2026-04-19 at 11.39.41 AM (1).jpeg" alt="Memory">
-                <p>The day we laughed until we couldn't breathe.</p>
+                <p>That time was so good that I'll never forget it in my entire life.</p>
             </div>
             <div class="memory-card">
                 <img src="WhatsApp Image 2026-04-19 at 11.39.41 AM.jpeg" alt="Memory">
-                <p>The quiet moments that meant the world.</p>
+                <p>The most beautiful thing that meant me more than the whole world.</p>
             </div>
         </div>
         <div class="container">
    <div class="container">
     <h3>Letters from my heart...</h3>
-    <p>Tap to open, tap again to close.</p>
+    <p>Tap to open, tap again to close.<br>
+    open the letters when you think i am getting too annoying and clingy.
+    </p>
 
     <div class="envelopes-container">
         <label class="envelope-wrapper">
@@ -121,12 +123,12 @@ setInterval(createFloatingHeart, 300);</script>
             <div class="envelope">
                 <div class="back"></div>
                 <div class="letter">
-                    <p>I miss the way you say my name. It always felt like home.</p>
+                    <p>"You're the best part of my life since 2023, and I hate being the reason you're sad.✨"</p>
                 </div>
                 <div class="front"></div>
                 <div class="top"></div>
             </div>
-            <p class="label-text">When you miss me</p>
+            <p class="label-text">When you are angry at me</p>
         </label>
 
         <label class="envelope-wrapper">
@@ -134,7 +136,7 @@ setInterval(createFloatingHeart, 300);</script>
             <div class="envelope">
                 <div class="back"></div>
                 <div class="letter">
-                    <p>I am so proud of you. Your strength inspires me every single day.</p>
+                    <p>I really love the way you make me feel, when u are around.</p>
                 </div>
                 <div class="front"></div>
                 <div class="top"></div>
@@ -145,23 +147,32 @@ setInterval(createFloatingHeart, 300);</script>
     </div>
 
     </div>
-    </div>
     <div class="container">
-        <h3>Things I adore about you:</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <button onclick="alert('I love how your eyes light up when we talk about this.')">☕ Your favorite coffee</button>
-            <button onclick="alert('I miss the way you laugh at that one movie.')">🎬 Your favorite movie</button>
-            <button onclick="alert('Your kindness is the best part of my day.')">🌟 Your gentle soul</button>
-            <button onclick="alert('I hope we can go back here together soon.')">📍 Our favorite spot</button>
+    <div class="heart-pulse-section">
+        <h3 class="section-title">Hold the Pulse ❤️</h3>
+        <p style="font-size: 0.8rem; margin-bottom: 20px;">Place your finger on the heart...</p>
+        
+        <div id="love-pulse-heart" onmouseover="startHeartbeat()" onmouseleave="stopHeartbeat()" ontouchstart="startHeartbeat()" ontouchend="stopHeartbeat()">
+            <div class="inner-heart">❤️</div>
+        </div>
+        
+        <div id="heart-message" class="hidden-fade">
+            "My heart has been beating for you since 2023... <br> 
+            and it hasn't skipped a beat since."
         </div>
     </div>
+</div>
+    </div>
+
+
     <div class="container">
         <div class="time-capsule">
             <h3>A Note from 2023 ⏳</h3>
             <p class="capsule-text">"I remember the first time we talked... I knew then that 2026 would still see us together. I was right."</p>
         </div>
     </div>
-        <a href="apology.html" class="btn">Back to my apology</a>
+        <a href="future.html" class="btn">press this if u forgive me for my mistakes!</a>
     </div>
+<script src="script.js"></script>
 </body>
 </html>
